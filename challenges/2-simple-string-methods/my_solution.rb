@@ -1,7 +1,8 @@
 # Simple String Methods
 
 # Tu solucion abajo:
-
+old_string="Ruby is cool"
+p new_string=old_string.upcase.reverse
 
 
 
