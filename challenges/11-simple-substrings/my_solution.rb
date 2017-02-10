@@ -12,5 +12,3 @@ def welcome(str)
     return "You should move to California"
   end
 end
-
-puts welcome("CA")
