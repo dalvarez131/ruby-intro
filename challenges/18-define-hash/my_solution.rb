@@ -2,8 +2,11 @@
 
 # Tu solucion abajo:
 
-
-
+my_info={first_name: 'Diana', last_name: 'Alvarez', hometown: 'Bogota', age:36}
+p ("#{my_info[:first_name]}")
+p ("#{my_info[:last_name]}")
+p ("#{my_info[:hometown]}")
+p ("#{my_info[:age]}")
 # Pruebas NO LAS BORRES
 
 
