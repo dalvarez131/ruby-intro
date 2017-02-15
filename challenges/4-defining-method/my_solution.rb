@@ -4,5 +4,6 @@
 
 
 # Tu solucion abajo:
-def do_something num1 num2 num3
+def do_something(a,b,c) #arity, signature
+
 end

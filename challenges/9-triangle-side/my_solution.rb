@@ -11,5 +11,3 @@ def valid_triangle? (one,two,three)
   else
       false
   end
-
-end

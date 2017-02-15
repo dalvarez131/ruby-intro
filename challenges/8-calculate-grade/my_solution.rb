@@ -1,7 +1,6 @@
 # Calculate a Grade
 
 # Tu solucion abajo:
-
 def get_grade promedio
   if (promedio <60)
     "F"

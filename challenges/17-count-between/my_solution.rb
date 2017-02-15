@@ -1,6 +1,12 @@
 # Count Between
 
 # Tu solucion abajo:
-def count_between (arr1, int1, int2)
-  arr1.count{|x|  (x >= int1) &&(x<=int2)}
+def count_between(arr, lower, upper)
+  count = 0
+  arr.each do |x|
+    if (x >= lower) && (x<= upper)
+      count = count + 1
+    end
+  end
+  count
 end

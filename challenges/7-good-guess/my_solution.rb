@@ -1,9 +1,9 @@
 # Good Guess
 
-
 # Tu solucion abajo:
-def good_guess? (number)
-  if (number==42)
+
+def good_guess?(a)
+  if a == 42
     true
   else
     false
