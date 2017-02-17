@@ -7,20 +7,55 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # 1. Itera sobre el array zombie_apocalypse_supplies, imprimiendo cada elemento dentro del array.
 # ----
 
+ zombie_apocalypse_supplies.each do |supplies|
+   p supplies
+ end
+
 # 2. Para mantenernos organizados, organiza el array zombie_apocalypse_supplies de forma alfabetica.
 # ----
 
- result == ["binoculars", "CB radio", "compass", "hatchet", "rations","shotgun", "Tactical 10mm", "water jug"]
+# result == ["binoculars", "CB radio", "compass", "hatchet", "rations","shotgun", "Tactical 10mm", "water jug"]
+
+zombie_apocalypse_supplies.each do |supplies|
+  supplies.downcase!
+end
+p zombie_apocalypse_supplies.sort!
 
 # 3. Crea un metodo que mire si un item (string) esta dentro del arreglo zombie_apocalypse_supplies. Por ejemplo esta `boots` dentro de la lista de suministros?.
 # ----
+def find (zombie_apocalypse_supplies, item)
+  vart=0
+  zombie_apocalypse_supplies.each do |supplies|
+     if item==supplies
+       vart+=1
+      end
+   end
+   if vart>0
+     p true
+     return true
+   else
+     p false
+     return false
+   end
+end
+
+find(zombie_apocalypse_supplies, "boots")
+find(zombie_apocalypse_supplies, "compass")
 
 # 4. No puedes cargar muchas cosas, solo hay espacio para 5. Remueve todos los items del arreglo zombie_apocalypse_supplies que tengas mas de dos palabras, solo pueden quedar los 5 items compuestos de una sola palabra.
 # ----
 
+zombie_apocalypse_supplies.delete_if {|supplies| supplies.include? " " }
+p zombie_apocalypse_supplies
+
 # 5. Encontraste otro sobreviviente! esto significa que pueden combinar sus suministros. Crea un nuevo arreglo de suministros combinados en base a tus zombie_apocalypse_supplies, y los sumnitros del otro sobreviviente. Debes deshacerte de todos los suministros que esten duplicados. No olvides revisar la documentacion de Array.
+
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
+share_supplies=zombie_apocalypse_supplies+other_survivor_supplies
+p share_supplies.uniq!
+
+
 # ----
 
 # Practica de Hash
@@ -37,12 +72,22 @@ extinct_animals = {
 
 # 1. Itera sobre el hash extinct_animals, imprimiendo cada vez el la pareja de key/value con un dash (-) entre ellos y un asterisco (*) entre cada elemento (animal extincto).
 # ----
-
+extinct_animals.each do |animal,age|
+  print "#{animal}-#{age}*"
+end
+puts
 # 2. Elimina todos los animales que se extinguieron despues del año 1999, del hash extinct_animals. No uses metodos especiales solo `delete` e iteraciones.
 # ----
+  extinct_animals.delete_if {|animal,age| age>1999 }
+  p extinct_animals
 
 # 3. Nuestros calculos estaban muy mal, resulta que todos esos animales se extinguieron 3 años antes que la fecha dada. Actualiza los valores dentro de extinct_animals para que reflejen el valor real de la fecha de extincion.
 # ----
+extinct_animals.each do |animal,age|
+  age= age-3
+  print "#{animal}-#{age}*"
+end
+p extinct_animals
 
 # 4. Oiste que los siguientes animales podian estar extinctos, pero no estas seguro. Uno por uno revisa si se encuentran incluidos dentro del hash extinct_animals:
 # "Andean Cat"
@@ -51,9 +96,33 @@ extinct_animals = {
 # "Saiga Antelope"
 # ----
 
+
+otros_extintos=["Andean Cat","Dodo","Tasmanian Tiger","Saiga Antelope"]
+extinct_animals.each do |animal,age|
+  otros_extintos.each do |animal1|
+    respuesta=animal.include? animal1
+    if respuesta==true
+      puts "#{animal} si esta en la lista"
+    end
+  end
+end
+
+
+
+
 # 5. Acabamos de encontrar que el Passenger Pigeon, realmente no esta extincto!
 # Remuevelo del hash extinct_animals y devuelve su pareja de key/value como un arreglo de dos elementos. Puedes encontrar un metodo en la documentacion de la  clase Hash que te puede ayudar con esto.
 # ----
+nuevo_array=[]
+extinct_animals.each do |animal,age|
+  if (animal=="Passenger Pigeon")
+    nuevo_array=[animal,age]
+
+  end
+end
+extinct_animals.delete_if {|animal,age| animal =="Passenger Pigeon" }
+p nuevo_array
+p extinct_animals
 
 
 # Practica, Estructuras nesteadas
@@ -66,7 +135,21 @@ array = [[1,2], ["inner", ["eagle", "par", ["FORE", "hook"]]]]
 
 # Intentos:
 # ============================================================
-
+array.each do |a|
+  a.each do |b|
+    if b.kind_of?(Array)
+      b.each do |c|
+        if c.kind_of?(Array)
+          c.each do |d|
+            if d =="FORE"
+              p  d
+            end
+          end
+        end
+      end
+    end
+  end
+end
 
 
 # ============================================================
@@ -77,8 +160,17 @@ hash = {outer: {inner: {"almost" => {3 => "congrats!"}}}}
 
 # Intentos:
 # ============================================================
-
-
+hash.each  do |key, a1|
+  a1.each do |key,b1|
+    b1.each do|key,c1|
+      c1.each do |key,d1|
+        if d1=="congrats!"
+          p d1
+        end
+      end
+    end
+  end
+end
 
 # ============================================================
 
@@ -86,10 +178,20 @@ hash = {outer: {inner: {"almost" => {3 => "congrats!"}}}}
 
 nested_data = {array: ["array", {hash: "finished"}]}
 
-# Intentos:
+# os:
 # ============================================================
 
-
+nested_data.each do |key,a|
+  a.each do |b|
+    if b.kind_of?(Hash)
+      b.each do |key,c|
+        if c=="finished"
+          p c
+        end
+      end
+    end
+  end
+end
 
 # ============================================================
 
@@ -97,8 +199,32 @@ nested_data = {array: ["array", {hash: "finished"}]}
 
 number_array = [5, [10, 15], [20,25,30], 35]
 
+number_array=number_array.map do |a|
+  if  !a.kind_of?(Array)
+    a=a+5
+  else
+    a.map do |b|
+      if  !b.kind_of?(Array)
+        b=b+5
+      end
+    end
+  end
+end
+p number_array
 
-
-# Crea un metodo que recina un array como argumento, en este caso el array startup_names, y devuelva un array igual pero en donde a cada nombre se le a añadido 'ly' al final.
+# Crea un metodo que reciba un array como argumento, en este caso el array startup_names, y devuelva un array igual pero en donde a cada nombre se le a añadido 'ly' al final.
 
 startup_names = ["bit", ["find", "fast", ["optimize", "scope"]]]
+
+def add_ly array1
+  array1=array1.map do |a|
+    if !a.kind_of?(Array)
+      a+'ly'
+    else
+        add_ly(a)
+    end
+
+  end
+  return array1
+end
+p array1=add_ly(startup_names)
