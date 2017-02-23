@@ -12,3 +12,7 @@ test_files1.each do |dir1|
     puts
   end
 end
+# dir = Dir.new('./testFiles')
+#
+# dir.each do |item|
+#   puts File.read("#{dir.path}/#{item}") if File.file?("#{dir.path}/#{item}")

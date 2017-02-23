@@ -19,7 +19,6 @@ En este paso deberas crear un programa que le permita al usuario crear un archiv
 EL objetivo es que un usuario pueda hacer lo siguiente desde la terminal:
 
 ```bash
-
 $ ruby write_file.rb --phrase 'hola como estas'
 ```
 
