@@ -1,9 +1,21 @@
  #Defining Variables
 
 # Tu solucion abajo
+<<<<<<< HEAD
 first_name = "Diana"
 last_name = "Alvarez"
 age = 36
+=======
+
+first_name = 'Juan'
+last_name = 'fdsaf'
+age = 2
+
+name = "Germán"
+name = gets.chomp
+puts "Hola #{name}"
+
+>>>>>>> upstream/master
 # Pruebas NO LAS BORRES
 
 

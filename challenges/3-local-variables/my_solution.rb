@@ -11,8 +11,6 @@ product=num1*num2
 modulus=num1%num2
 
 
-
-
 num1 = 4
 num2 = 9
 

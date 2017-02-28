@@ -1,4 +1,3 @@
-
 def write_file (phrase_index)
   if phrase_index
     mensaje=ARGV[phrase_index+1]

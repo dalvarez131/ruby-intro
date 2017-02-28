@@ -38,8 +38,4 @@ end
 most_common_words('source.txt', 20)
 # 2. Solucion con Refactor
 
-
-
-
-
 ###### DRIVER CODE #########

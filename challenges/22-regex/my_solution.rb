@@ -31,8 +31,6 @@ def grab_ssn(string)
   end
 end
 #string[/\d{3}-\d{2}-\d{4}/]
-
-
 puts "grab_ssn returns an SSN if the string has an SSN"
 puts grab_ssn("please don't share this: 234-60-1422") == "234-60-1422"
 
@@ -45,7 +43,6 @@ def grab_all_ssns(string)
   array1=string.scan(/\d{3}-\d{2}-\d{4}/)
 end
 #string.scan(/\d{3}-\d{2}-\d{4}/)
-
 
 puts "grab_all_ssns returns all SSNs if the string has any SSNs"
 puts grab_all_ssns("234-60-1422, 350-80-0744, 013-60-8762") == ["234-60-1422", "350-80-0744", "013-60-8762"]
@@ -68,7 +65,6 @@ def hide_all_ssns(string)
   end
 end
 #string.gsub(/\d{3}-\d{2}-/, 'XXX-XX-' )
-
 # def hide_all_ssns(string)
 #   # tu codigo va aca
 #   match = string.scan(/\d{3}-\d{2}-\d{4}/)

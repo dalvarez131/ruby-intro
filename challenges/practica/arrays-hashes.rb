@@ -6,7 +6,6 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 
 # 1. Itera sobre el array zombie_apocalypse_supplies, imprimiendo cada elemento dentro del array.
 # ----
-
  zombie_apocalypse_supplies.each do |supplies|
    p supplies
  end

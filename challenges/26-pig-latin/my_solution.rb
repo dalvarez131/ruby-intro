@@ -32,8 +32,6 @@ def pig_latin_tense (string1)
 end
 
 p pig_latin_tense('Hola Pepito como estas')
-
-
 # 2. Solucion con Refactor
 
 
