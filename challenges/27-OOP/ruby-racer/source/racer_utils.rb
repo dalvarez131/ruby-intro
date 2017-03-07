@@ -17,3 +17,10 @@ end
 def move_to_home!
   print "\e[H"
 end
+
+
+
+move_to_home!
+move_to_home!
+move_to_home!
+clear_screen!
