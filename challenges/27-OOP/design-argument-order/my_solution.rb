@@ -33,8 +33,15 @@ end
 
 # Pon driver code aca para probar que todo este funcionando.
 ###### DRIVER CODE ########
+<<<<<<< HEAD
 p my_casa=House.new({address: "21 st", square_feet: 12, sold: true, short_sale: 20 })
 p my_casa.obscure_address
 p my_casa.buy!(80000,20000)
 p my_casa.down_payment
 p my_casa.to_s
+=======
+
+
+
+
+>>>>>>> upstream/master

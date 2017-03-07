@@ -33,6 +33,7 @@ end
 
 
 class Dog
+<<<<<<< HEAD
   include Reality
   attr_accessor :walk, :eat
 
@@ -49,6 +50,15 @@ class Dog
       true
     else
       false
+=======
+  def initialize(name)
+    @name = name
+    begin
+      raise ArgumenError.new('Wron name input') if name.is_a?(Fixnum)
+      @name = name
+    rescue
+      @name = 'Default name'
+>>>>>>> upstream/master
     end
   end
   def speak!
@@ -67,6 +77,7 @@ class Dog
   end
 end
 
+<<<<<<< HEAD
 
 class Cat
   include Reality
@@ -168,3 +179,21 @@ p owner.pets << fido
 #
 # # las mascotas pueden hacer trucos
 # assert(owner.showoff_pet_tricks)
+=======
+class Person
+  attr_accessor :pets
+
+  def initialize
+    @pets = []
+
+  end
+
+end
+
+
+class Game
+  end
+
+
+g = Game.new(50)
+>>>>>>> upstream/master
