@@ -2,7 +2,7 @@
 
 ## Resumen
 
-![Database Schema](/schema_design.png)
+![Database Schema](schema_design.png)
 
 *Figura 1.* Esquema para este reto.
 
