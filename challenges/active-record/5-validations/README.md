@@ -43,6 +43,7 @@ end
 
 *Figure 1.*
 
+
 Vamos a seguir trabajando con nuestra clase `Dog`. La clase ya esta definida en el archivo `app/models/dog.rb`.
 
 ### `validates`
@@ -135,4 +136,4 @@ Continua arreglando los errores hasta que `new_dog.save` devuelva `true`. Luego 
 
 Hemos agregado unas pruebas para describir las validaciones que queremos en nuestros modelos. Mira como ejemplo las pruebas para `Dog` en `source/spec/models/dog_spec.rb` y como la clase las cumple todas.
 
-Hay pruebas también para `Rating` y `Person`. No hay necesidad de que hagas validaciones personalizadas, los helpers de validación tienen todo lo que necesitamos. Tendrás que explorarlos para poder pasar todas las pruebas. 
+Hay pruebas también para `Rating` y `Person`. No hay necesidad de que hagas validaciones personalizadas, los helpers de validación tienen todo lo que necesitamos. Tendrás que explorarlos para poder pasar todas las pruebas.
